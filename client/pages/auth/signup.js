@@ -3,12 +3,17 @@ import axios from "axios";
 export default () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
   const onSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post("api/users/signup", {
-      email,
-      password,
-    });
+    try {
+      const response = await axios.post("api/users/signup", {
+        email,
+        password,
+      });
+    } catch (err) {
+      setErrors(err.response.data.errors);
+    }
 
     console.log(response.data);
   };
@@ -22,7 +27,6 @@ export default () => {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
-          type="email"
           className="form-control"
         />
       </div>
@@ -38,6 +42,11 @@ export default () => {
           className="form-control"
         />
       </div>
+      <div className="alert alert-danger">
+        <h4>Ops....</h4>
+        <ul className="my-0">{errors.map((err) => err.message)}</ul>
+      </div>
+
       <button className="btn btn-primary">Sign up</button>
     </form>
   );
