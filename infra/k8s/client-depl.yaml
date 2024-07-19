@@ -4,8 +4,8 @@ metadata:
   name: client-depl
 spec:
   replicas: 1
-  selector: 
-    matchlabels:
+  selector:
+    matchLabels:
       app: client
   template:
     metadata:
@@ -14,19 +14,17 @@ spec:
     spec:
       containers:
         - name: client
-          image: mohab2000/client
-
---- 
+          image: rallycoding/ticketing-client
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: client-srv
 spec:
-  selector: 
+  selector:
     app: client
-  ports: 
+  ports:
     - name: client
       protocol: TCP
       port: 3000
       targetPort: 3000
-

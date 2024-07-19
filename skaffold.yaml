@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: mohab2000/auth
+    - image: rallycoding/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,11 +16,11 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: mohab2000/client
+    - image: rallycoding/ticketing-client
       context: client
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: "**/*.js"
+          - src: '**/*.js'
             dest: .

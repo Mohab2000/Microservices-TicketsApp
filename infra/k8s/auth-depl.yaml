@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: mohab2000/auth
+          image: rallycoding/auth
           env:
             - name: JWT_KEY
               valueFrom:
