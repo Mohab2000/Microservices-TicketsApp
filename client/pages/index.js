@@ -2,8 +2,11 @@ import buildClient from "../api/build-client";
 
 //EXECUTED ON THE CLIENT (REQUEST COMES FROM THE CLIENT WHENEVER IT'S INITIATED FROM COMPONENT)
 const LandingPage = ({ currentUser }) => {
-  console.log(currentUser);
-  return <h1>Landing Page</h1>;
+  return currentUser ? (
+    <h1>You are signed in </h1>
+  ) : (
+    <h1>You are not signed in</h1>
+  );
 };
 
 //EXECUTED ON THE SERVER (REQUEST COMES FROM THE SERVER ITSELF)
