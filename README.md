@@ -1,23 +1,23 @@
-Ticketing Application
-This is a full-stack ticketing application designed to manage event ticket sales. The application is built using microservices architecture, containerized with Docker, and orchestrated using Kubernetes. Skaffold is used for managing the development workflow.
+Microservices TicketsApp
+Overview
+This project is a full-stack ticketing application for managing event ticket sales, built using microservices architecture. It leverages Docker for containerization and Kubernetes for orchestration, with Skaffold managing the development workflow.
 
 Features
-User authentication and authorization
-Event creation and management
-Ticket purchasing and reservation
-Payment processing
-Order management
+User Authentication and Authorization
+Event Creation and Management
+Ticket Purchasing and Reservation
+Payment Processing
+Order Management
 Responsive UI
 Architecture
-The application follows a microservices architecture with each service responsible for a specific domain. The primary services include:
+The application consists of several microservices, each responsible for a specific domain:
 
 Auth Service: Manages user authentication and authorization.
 Event Service: Handles event creation, updating, and listing.
 Ticket Service: Manages ticket inventory and reservations.
-Order Service: Handles ticket orders and purchases.
+Order Service: Manages ticket orders and purchases.
 Payment Service: Processes payments.
 Client Service: Provides the front-end interface.
-
 Prerequisites
 Docker
 Kubernetes (Minikube for local development or any Kubernetes cluster)
@@ -27,16 +27,21 @@ Helm (optional, for managing Kubernetes resources)
 Node.js (for the client and some services)
 MongoDB (as a database)
 Installation
-1. Clone the repository
-git clone [https://github.com/mohab2000/ticketing-app.git](https://github.com/Mohab2000/Microservices-TicketsApp.git)
-cd ticketing-app
+Clone the repository:
 
-Install Skaffold
+sh
+Copy code
+git clone https://github.com/Mohab2000/Microservices-TicketsApp.git
+cd Microservices-TicketsApp
+Install Skaffold:
 Follow the Skaffold installation guide to install Skaffold on your system.
 
-2. Deploy using Skaffold
-  Skaffold simplifies the development workflow by building and deploying your application automatically:
+Start the application:
 
-Start the application 
-  npm install in each service
-  cd to the root directory and run skaffold dev
+sh
+Copy code
+npm install # Run in each service directory
+skaffold dev # Run in the root directory
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or new features.
+
