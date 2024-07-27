@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export default ({ req }) => {
-  if (typeof window === "undefind") {
+  if (typeof window === "undefined") {
     return axios.create({
       baseURL:
-        "http://ingress-nginx.ingress-nginx-controller.svc.cluster.local",
+        "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
       headers: req.headers,
     });
   } else {
