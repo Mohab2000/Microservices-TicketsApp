@@ -1,7 +1,11 @@
 import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
-import { errorHandler, NotFoundError, currentUser } from "@tickets-mohab/common";
+import {
+  errorHandler,
+  NotFoundError,
+  currentUser,
+} from "@tickets-mohab/common";
 import cookieSession from "cookie-session";
 import { createTicketRouter } from "./routes/new";
 
@@ -14,6 +18,8 @@ app.use(
     secure: process.env.NODE_ENV !== "test",
   })
 );
+
+app.use(currentUser);
 
 app.use(createTicketRouter);
 
