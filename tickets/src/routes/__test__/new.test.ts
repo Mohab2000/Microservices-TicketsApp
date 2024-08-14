@@ -59,4 +59,13 @@ describe("Invalid price tests", () => {
       .expect(400);
   });
 });
-it("creates a ticket with valid inputs", async () => {});
+it("creates a ticket with valid inputs", async () => {
+  //add a check to make sure that the ticket is saved to database.
+  await request(app)
+    .post("/api/tickets")
+    .send({
+      title: "new title",
+      price: 20,
+    })
+    .expect(201);
+});
