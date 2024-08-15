@@ -1,6 +1,6 @@
 {
   "name": "@tickets-mohab/common",
-  "version": "1.0.22",
+  "version": "1.0.30",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
