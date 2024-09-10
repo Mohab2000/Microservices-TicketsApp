@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { Password } from "../services/password";
 
-// An interface that describes the attributes that are required to create a new user
+// An interfaces that describes the attributes that are required to create a new user
 
 interface UserAttrs {
   email: string;
