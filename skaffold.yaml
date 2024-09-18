@@ -9,7 +9,7 @@ build:
     push: false
   artifacts:
     - image: mohab2000/auth
-      context: auth
+      context: auth 
       docker:
         dockerfile: Dockerfile
       sync:
@@ -22,7 +22,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: "**/*.js"
+          - src: '**/*.js'
             dest: .
     - image: mohab2000/tickets
       context: tickets
@@ -30,5 +30,5 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: "src/**/*.ts"
+          - src: 'src/**/*.ts'
             dest: .
